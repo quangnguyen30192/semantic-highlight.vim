@@ -603,6 +603,18 @@ let s:blacklist = {
   \   'DateTime?',
   \   'and',
   \   'shl',
+  \   'assertThrows',
+  \   'verify',
+  \   'times',
+  \   'invoke',
+  \   'assertEquals',
+  \   'whenever',
+  \   'thenReturn',
+  \   'returns',
+  \   'every',
+  \   'to',
+  \   'thenThrow',
+  \   'every',
   \   'init'
   \ ],
 	\ 'rust': [
