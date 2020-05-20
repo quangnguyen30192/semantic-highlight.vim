@@ -200,5 +200,3 @@ function! s:autoHighlightBuffer()
 endfunction
 
 autocmd BufEnter * call s:autoHighlightBuffer()
-
-nnoremap <Leader>s :SemanticHighlightToggle<cr>
