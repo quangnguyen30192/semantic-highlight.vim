@@ -188,6 +188,13 @@ endfunction
 let s:isHighlightBuffer = -1
 
 function! s:autoHighlightBuffer()
+  let fileBlacklist = fileblacklist#GetBlacklist()
+  for bl in fileBlacklist
+    if bl == &filetype
+      return
+    endif
+  endfor
+
   if s:isHighlightBuffer == -1
     return 
   endif
