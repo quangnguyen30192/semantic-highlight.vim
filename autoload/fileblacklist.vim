@@ -3,6 +3,7 @@ let s:blacklist = [
   \'',
   \'helm',
   \'yaml',
+  \'floaterm',
   \]
 
 function! fileblacklist#GetBlacklist()

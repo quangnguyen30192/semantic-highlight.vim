@@ -109,7 +109,13 @@ function! s:semHighlight()
 
 	while buflen
 		let curline = getline(buflen)
+    let buflen -= 1
 		let index = 0
+
+    if syntaxcheck#run(curline)
+      continue
+    endif
+
 		while 1
 			let match = matchstr(curline, pattern, index)
 
@@ -131,7 +137,6 @@ function! s:semHighlight()
 
 			let index += len(match) + 1
 		endwhile
-		let buflen -= 1
 	endwhile
 endfunction
 
