@@ -182,15 +182,18 @@ endfunction
 function! s:toggleHighlight()
 	if (exists('b:semanticOn') && b:semanticOn == 1)
 		call s:disableHighlight()
-    let s:isHighlightBuffer = 0
+    let g:isHighlightBuffer = 0
 	else
 		call s:semHighlight()
 		let b:semanticOn = 1
-    let s:isHighlightBuffer = 1
+    let g:isHighlightBuffer = 1
 	endif
 endfunction
 
-let s:isHighlightBuffer = -1
+let g:isHighlightBuffer = -1
+let g:highlightByDefault = [
+      \ "kotlin",
+      \ ]
 
 function! s:autoHighlightBuffer()
   let fileBlacklist = fileblacklist#GetBlacklist()
@@ -200,11 +203,18 @@ function! s:autoHighlightBuffer()
     endif
   endfor
 
-  if s:isHighlightBuffer == -1
+  let highlightByDefault = 0
+  for ft in g:highlightByDefault
+    if ft == &filetype
+      let highlightByDefault = 1
+    endif
+  endfor
+
+  if g:isHighlightBuffer == -1 && !highlightByDefault
     return 
   endif
 
-  if s:isHighlightBuffer
+  if g:isHighlightBuffer
     call s:enableHighlight()
   else
     call s:disableHighlight()

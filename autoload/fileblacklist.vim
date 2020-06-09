@@ -4,6 +4,7 @@ let s:blacklist = [
   \'helm',
   \'yaml',
   \'floaterm',
+  \'vim',
   \]
 
 function! fileblacklist#GetBlacklist()
