@@ -1,5 +1,5 @@
 fu! syntaxcheck#run(curline)
-  if &filetype == "kotlin"
+  if &filetype == "kotlin" || &filetype == "java"
     return s:kotlin(a:curline)
   else
     return 0

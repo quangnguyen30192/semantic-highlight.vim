@@ -193,6 +193,7 @@ endfunction
 let g:isHighlightBuffer = -1
 let g:highlightByDefault = [
       \ "kotlin",
+      \ "java",
       \ ]
 
 function! s:autoHighlightBuffer()
