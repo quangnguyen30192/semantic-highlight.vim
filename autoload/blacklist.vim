@@ -615,7 +615,9 @@ let s:blacklist = {
   \   'to',
   \   'thenThrow',
   \   'every',
-  \   'init'
+  \   'init',
+  \   'toString',
+  \   'fun'
   \ ],
 	\ 'rust': [
 	\	'Self',
